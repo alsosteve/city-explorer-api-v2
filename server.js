@@ -7,13 +7,18 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+// json file
+const weather = require('./data/weather.json');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //middleware
 app.use(cors());
 
-
+app.get('/', (req, res) => {
+  res.status(200).send('Working on it, sir. This is a prototype. -J.A.R.V.I.S.');
+});
 
 
 // turns server on
