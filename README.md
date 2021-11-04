@@ -35,21 +35,21 @@ Actual time needed to complete: 20 min
 
 Estimate of time needed to complete: 1 hr
 
-Start time: 00:00 Am
+Start time: 12:00 Am
 
-Finish time: 0:00 Am
+Finish time: 04:40 Am
 
-Actual time needed to complete: 0 hrs
+Actual time needed to complete: 4 hrs 40 min
 
 ### Name of feature: 7.3 Errors (revisited)
 
 Estimate of time needed to complete: 20 min
 
-Start time: 00:00 Am
+Start time: 04:40 Am
 
-Finish time: 00:00 Am
+Finish time: 04:48 Am
 
-Actual time needed to complete: 00 min
+Actual time needed to complete: 08 min
 
 ### Name of feature: 8.1 Weather (live)
 
