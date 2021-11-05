@@ -2,44 +2,31 @@
 const axios = require("axios");
 require('dotenv').config();
 
-// json file
-const weather = require('../data/weather.json');
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 
 class Forecast{
   constructor(date, description) {
     this.date = date;
     this.description = description;
   }
-}
+};
 
-let handleGetWeather = (req, res) => {
-    const searchQuery = req.query.searchQuery;
+let handleGetWeather = async (req, res) => {
     const lon = req.query.lon;
     const lat = req.query.lat;
-      
-    
-    const cityResult = weather.find(element => 
-      String(element.lat) === lat && String(element.lon) === lon && element.city_name === searchQuery);
-     
-    
-     const forecastArr = arr => {
-      return arr.map(obj => {
-        return {
-          datetime: obj.datetime,
-          description: `Low of ${obj.low_temp}, high of ${obj.high_temp} with ${obj.weather.description}`,
-        };
-      }
-        );
-     };
-    
-    // console.log(forecastArr(cityResult.data));
-    
-     if(cityResult === undefined) {
-      res.status(400).send('Invalid Entry');
-    } else {
-        res.status(200).send(forecastArr(cityResult.data));
+
+    const weatherUrl = `http://api.weatherbit.io/v2.0/forecast/daily/?key=${WEATHER_API_KEY}&lang=en&lat=${lat}&lon=${lon}&days=5`;
+
+    try {
+      const weatherResponse = await axios.get(weatherUrl);
+      const forecastArr = arr => {return arr.map(data => {
+        return new Forecast (data.datetime, `Low of ${data.low_temp}, high of ${data.high_temp} with ${data.weather.description}`)
+      })};
+      res.status(200).send(forecastArr(weatherResponse.data.data));
+    } catch (error) {
+      console.error(error.message);
     }
-}
+};
 
 
 module.exports = handleGetWeather;

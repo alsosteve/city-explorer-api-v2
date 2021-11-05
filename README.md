@@ -53,6 +53,26 @@ Actual time needed to complete: 08 min
 
 ### Name of feature: 8.1 Weather (live)
 
+Estimate of time needed to complete: 1 hr
+
+Start time: 05:40 Am
+
+Finish time: 06:50 Am
+
+Actual time needed to complete: 1 hr 10 min
+
+### Name of feature: 8.2 Movies
+
+Estimate of time needed to complete: 30 min
+
+Start time: 07:00 Am
+
+Finish time: 07:30 Am
+
+Actual time needed to complete: 0 hr
+
+### Name of feature: 8.3 Publish
+
 Estimate of time needed to complete: 30 min
 
 Start time: 00:00 Am
